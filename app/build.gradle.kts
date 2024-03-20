@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.androidApplication)
+    id("org.sonarqube") version "4.4.1.3373"
 }
 
 android {
