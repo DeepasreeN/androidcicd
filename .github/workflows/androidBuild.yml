@@ -93,7 +93,7 @@ jobs:
       - name : Setup Java JDK
         uses : actions/setup-java@v3.13.0
         with :
-          java-version : '22'
+          java-version : '21'
           distribution : 'adopt'
 
       - name: Make gradlew executable
