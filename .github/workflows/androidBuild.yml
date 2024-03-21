@@ -54,6 +54,7 @@ jobs:
           name: unit_test_report
           path: app/build/reports/tests/testDebugUnitTest/
   static-code-analysis:
+    needs: [unit-tests]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
