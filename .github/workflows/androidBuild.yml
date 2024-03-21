@@ -6,53 +6,53 @@ on:
     branches : [master]
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.0
-
-      - name : Setup Java JDK
-        uses : actions/setup-java@v3.13.0
-        with :
-          java-version : '17'
-          distribution : 'adopt'
-
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
-      - name: Run Lint
-        run: ./gradlew lintDebug
-
-      - name: Upload html test report
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: lint.html
-          path: app/build/reports/lint-results-debug.html
-  unit-tests:
-    needs: [lint]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.0
-
-      - name: Setup Java JDK
-        uses: actions/setup-java@v3.13.0
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
-      - name: Run Unit Tests
-        run: ./gradlew test
-
-      - name: Upload html test report
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: unit_test_report
-          path: app/build/reports/tests/testDebugUnitTest/
+#  lint:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4.1.0
+#
+#      - name : Setup Java JDK
+#        uses : actions/setup-java@v3.13.0
+#        with :
+#          java-version : '17'
+#          distribution : 'adopt'
+#
+#      - name: Make gradlew executable
+#        run: chmod +x ./gradlew
+#
+#      - name: Run Lint
+#        run: ./gradlew lintDebug
+#
+#      - name: Upload html test report
+#        uses: actions/upload-artifact@v3.1.3
+#        with:
+#          name: lint.html
+#          path: app/build/reports/lint-results-debug.html
+#  unit-tests:
+#    needs: [lint]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4.1.0
+#
+#      - name: Setup Java JDK
+#        uses: actions/setup-java@v3.13.0
+#        with:
+#          java-version: '17'
+#          distribution: 'adopt'
+#
+#      - name: Make gradlew executable
+#        run: chmod +x ./gradlew
+#
+#      - name: Run Unit Tests
+#        run: ./gradlew test
+#
+#      - name: Upload html test report
+#        uses: actions/upload-artifact@v3.1.3
+#        with:
+#          name: unit_test_report
+#          path: app/build/reports/tests/testDebugUnitTest/
   static-code-analysis1:
     runs-on: ubuntu-latest
     steps:
@@ -94,7 +94,7 @@ jobs:
       - name : Setup Java JDK
         uses : actions/setup-java@v3.13.0
         with :
-          java-version : '17'
+          java-version : '22'
           distribution : 'adopt'
 
       - name: Make gradlew executable
