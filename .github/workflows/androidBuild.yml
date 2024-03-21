@@ -85,7 +85,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew build sonar --info
   static-code-analysis:
-    needs: [ unit-tests ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
